@@ -32,6 +32,15 @@ export default {
 			}),
 			commonjs(),
 
+			!legacy && babel({
+				extensions: ['.js', '.mjs', '.html', '.svelte'],
+				exclude: ['node_modules/@babel/**'],
+				plugins: [
+					'@babel/plugin-syntax-dynamic-import',
+					'@babel/plugin-proposal-object-rest-spread'
+				]
+			}),
+
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
 				runtimeHelpers: true,
