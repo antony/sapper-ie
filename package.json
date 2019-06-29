@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
+    "ie": "npm run build && PORT=3002 node __sapper__/build",
     "build": "sapper build --legacy && cp ./node_modules/shimport/index.dev.js ./__sapper__/build/client/shimport@1.0.1.js",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
