@@ -31,6 +31,12 @@ It Works!
   }),
 ```
 
+3. Special run mode to run the app via bable for easy local testing
+
+```sh
+npm run build:dev
+```
+
 ## Running
 
 Don't expect this to work in IE/Edge in dev mode.

@@ -7,13 +7,12 @@
 	export let segment;
 
 	onMount(async () => {
-		// console.log(Api)
-		await Api
-			.create()
-			.endpoint('http://mob.beyonk.com:1234')
-			.get(() => {
-				console.log('got it')
-			})
+		// await Api
+		// 	.create()
+		// 	.endpoint('https://example.com')
+		// 	.get(() => {
+		// 		console.log('got it')
+		// 	})
 	})
 </script>
 
