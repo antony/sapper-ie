@@ -3,7 +3,8 @@
 <head>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1.0'>
-	<meta name='theme-color' content='#333333'>
+  <meta name='theme-color' content='#333333'>
+  <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js"></script>
 
 	%sapper.base%
 
@@ -28,11 +29,6 @@
 	<!-- Sapper creates a <script> tag containing `app/client.js`
 	     and anything else it needs to hydrate the app and
 			 initialise the router -->
-			 <!-- <script crossorigin="anonymous" src="https://unpkg.com/blob-polyfill@4.0.20190430/Blob.js"></script>
-			 <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.js?features=Object.keys,Array.prototype.keys,Array.from,String.prototype.startsWith,Map,URL,Promise"></script>
-			 <script crossorigin="anonymous" src="https://unpkg.com/whatwg-fetch@3.0.0"></script> -->
-			 <script>if(!window.Promise||![].includes||!Object.assign||!window.Map||!window.fetch){
-				document['wr'+'ite']('<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch,Array.prototype.find,Object.values"><\/script>')}</script>
 	%sapper.scripts%
 </body>
 </html>
