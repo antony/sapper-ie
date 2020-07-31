@@ -4,8 +4,15 @@
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1.0'>
   <meta name='theme-color' content='#333333'>
-  <script>if(!window.Promise||![].includes||!Object.assign||!window.Map||!window.fetch){
-    document['wr'+'ite']('<script crossorigin="anonymous" src="https://cdn.polyfill.io/v3/polyfill.min.js?features=default,fetch,Array.prototype.find,Object.values"><\/script>')}</script>
+	<script>
+		if(!window.Promise||![].includes||!Object.assign||!window.Map||!window.fetch){
+			document['wr'+'ite']('<script crossorigin="anonymous" src="https://cdn.polyfill.io/v3/polyfill.min.js?features=default,fetch,Array.prototype.find,Object.values"><\/script>')
+		}
+
+		if ('innerHTML' in SVGElement.prototype === false || 'innerHTML' in SVGSVGElement.prototype === false) {
+			document['wr' + 'ite']('<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/svg-innerhtml-polyfill@1.1.0/index.js"><\/script>');
+		}
+	</script>
 
 	%sapper.base%
 
