@@ -2,7 +2,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
@@ -33,29 +33,13 @@ export default {
 			}),
 			commonjs(),
 
-			!legacy && babel({
+      legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
-				exclude: ['node_modules/@babel/**'],
-				plugins: [
-					'@babel/plugin-syntax-dynamic-import',
-					'@babel/plugin-proposal-object-rest-spread'
-				]
-			}),
-
-			legacy && babel({
-				extensions: ['.js', '.mjs', '.html', '.svelte'],
-				runtimeHelpers: true,
-				exclude: ['node_modules/@babel/**'],
-				presets: [
-					['@babel/preset-env', {
-						// spec: true,
-						targets: '> 0.25%, ie >= 11, not dead'
-					}]
-				],
-				plugins: [
-					'@babel/plugin-syntax-dynamic-import',
-					['@babel/plugin-transform-runtime', {
-						useESModules: true
+				babelHelpers: 'runtime',
+				"plugins": [
+					"@babel/plugin-syntax-dynamic-import",
+					["@babel/plugin-transform-runtime", {
+						"useESModules": true
 					}]
 				]
 			}),
