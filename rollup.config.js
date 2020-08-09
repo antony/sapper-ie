@@ -28,12 +28,12 @@ export default {
 				emitCss: true
 			}),
 			resolve({
-        browser: true,
-        dedupe: [ 'svelte' ]
+				browser: true,
+				dedupe: [ 'svelte' ]
 			}),
 			commonjs(),
 
-      legacy && babel({
+			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
 				babelHelpers: 'runtime',
 				"plugins": [
@@ -65,8 +65,8 @@ export default {
 				dev
 			}),
 			resolve({
-        dedupe: [ 'svelte' ]
-      }),
+				dedupe: [ 'svelte' ]
+			}),
 			commonjs()
 		],
 		external: Object.keys(pkg.dependencies).concat(
