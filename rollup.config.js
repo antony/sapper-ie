@@ -1,5 +1,5 @@
 import resolve from '@rollup/plugin-node-resolve';
-import replace from 'rollup-plugin-replace';
+import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
@@ -28,12 +28,12 @@ export default {
 				emitCss: true
 			}),
 			resolve({
-        browser: true,
-        dedupe: [ 'svelte' ]
+				browser: true,
+				dedupe: [ 'svelte' ]
 			}),
 			commonjs(),
 
-      legacy && babel({
+			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
 				babelHelpers: 'runtime',
 				"plugins": [
@@ -65,8 +65,8 @@ export default {
 				dev
 			}),
 			resolve({
-        dedupe: [ 'svelte' ]
-      }),
+				dedupe: [ 'svelte' ]
+			}),
 			commonjs()
 		],
 		external: Object.keys(pkg.dependencies).concat(
