@@ -50,7 +50,7 @@
 
 <p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
 
-<p style="display:flex; align-items:center;justify-content:center;">You should be able to see the thumbs up icon below</p>
+<p>You should be able to see the thumbs up icon below</p>
 
 <svg 
 	xmlns="http://www.w3.org/2000/svg" 
