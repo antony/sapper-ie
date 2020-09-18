@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build --legacy && cp ./node_modules/shimport/index.dev.js ./__sapper__/build/client/shimport@1.0.1.js",
+    "build": "sapper build --legacy",
     "build:dev": "npm run build && npm run start",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
